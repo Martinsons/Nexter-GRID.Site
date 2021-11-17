@@ -1,9 +1,31 @@
 .features {
-  background-color: $color-grey-light-1;
+
   grid-column: center-start / center-end;
 
   margin: 15rem 0;
 
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  // grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+  // repeat columns, auto-fit automatiski piepilda, ja minmax - mazakais izmers drikst but 30rem - 300px neieskaitot atstarpes, max 1fr, ja ekrana neietilspt visi, tas samazina skaitu
+  grid-gap: 6rem;
+  align-items: start;
+}
+
+.feature {
+
+  display: grid;
+  grid-template-columns: min-content 1fr;
+  grid-row-gap: 1.5rem;
+  grid-column-gap: 2.5rem;
+
+  &__icon {
+    fill: $color-primary;
+    grid-row: 1 / span 2;
+    transform: translateY(-2rem);
+  }
+
+  &__text {
+    font-size: 1.4rem;
+  }
 }
